@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <History>True|2023-05-04T12:21:27.8187879Z;True|2023-05-04T15:14:12.3466002+03:00;True|2023-05-04T15:01:34.6949020+03:00;True|2023-05-04T11:55:18.6942393+03:00;False|2023-05-04T11:51:16.1973404+03:00;False|2023-05-04T11:47:38.5072630+03:00;False|2023-05-04T11:45:28.0325491+03:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=SQL8005.site4now.net%3bInitial Catalog=db_a98ac1_database1%3bUser Id=db_a98ac1_database1_admin%3bPassword=sede3433343</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

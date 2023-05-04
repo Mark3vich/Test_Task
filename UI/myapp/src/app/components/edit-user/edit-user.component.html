@@ -1,0 +1,110 @@
+<form *ngIf="user" [ngClass]="{Wrapper: true}">
+    <div [ngClass]="{Decorative_block: true}">
+        <div [ngClass]="{Decorative_block1: true}"></div>
+        <div [ngClass]="{Decorative_block1_1: true}"></div>
+        <div [ngClass]="{Decorative_block2: true}">
+            <p [ngClass]="{Write: true}">Напишите нам</p>
+        </div>
+        <div [ngClass]="{Decorative_block3: true}"></div>
+    </div>
+    <div id="removeElements">
+        <div [ngClass]="{Container: true}">
+            <div [hidden]="name.valid || name.untouched">
+                <div class="alertDangerN0"></div>
+                <div class="alertDanger0">
+                    Не указано имя
+                </div>
+            </div>
+
+            <div [ngClass]="{Naming: true}">
+                Ваше Имя:
+                <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.name" [ngClass]="{Input: true}"
+                    name="name" required #name="ngModel" />
+            </div>
+
+            <div [hidden]="email.valid || email.untouched">
+                <div class="alertDangerN"></div>
+                <div class="alertDanger">
+                    Некоректный Email
+                </div>
+            </div>
+
+            <div [ngClass]="{Naming: true}">
+                Ваш Email:
+                <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email" [ngClass]="{Input: true}" required
+                    pattern="^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})|(^[0-9]{10})+$" name="email"
+                    #email="ngModel" />
+            </div>
+
+            <div [hidden]="telephone.valid || telephone.untouched">
+                <div class="alertDangerN2"></div>
+                <div class="alertDanger2">
+                    Некоректный номер телефона
+                </div>
+            </div>
+
+            <div [ngClass]="{Naming: true}">
+                Ваш Телефон:
+                <input [ngModelOptions]="{standalone: true}" [(ngModel)]="user.telephone" [ngClass]="{Input: true}"
+                    required pattern="[0-9]{10}" name="telephone" #telephone="ngModel" />
+            </div>
+
+            <div [ngClass]="{Naming: true}">
+                <p>Тема:</p>
+                <ul [ngClass]="{List: true}" [class.visited]="isVisited == false">
+                    <input [ngClass]="{ListN: true}"
+                        (click)="checkVisited(); getInputValue2($event); isInputUndefind($event);"
+                        value="Техподдержка" />
+                    <input [ngClass]="{ListN: true}"
+                        (click)="checkVisited(); getInputValue2($event); isInputUndefind($event);" value="Продажи" />
+                    <input [ngClass]="{ListN: true}"
+                        (click)="checkVisited(); getInputValue2($event); isInputUndefind($event);" value="Другое" />
+                    <input [ngClass]="{ListN: true}"
+                        (click)="checkVisited(); getInputValue2($event); isInputUndefind($event);"
+                        value="Еще один пункт" />
+                </ul>
+                <input type="text" name="message_topics" readonly="readonly" [(ngModel)]="user.message_topics"
+                    [ngClass]="{InputN: true}" (click)="checkVisited();isInputUndefind($event);" [value]="getInput()" id="message_topics"/>
+            </div>
+
+            <div [hidden]="message.valid || message.untouched">
+                <div class="alertDangerN3"></div>
+                <div class="alertDanger3">
+                    Не указано сообщение
+                </div>
+            </div>
+
+            <div [ngClass]="{Naming: true}">
+                Ваше сообщение:
+                <input [ngModelOptions]="{standalone: true}" [ngClass]="{Input: true}" [(ngModel)]="user.message"
+                    required name="message" #message="ngModel" />
+            </div>
+
+            <div [ngClass]="{Naming_c: true}">
+                <div>
+                    Цифры:
+                </div>
+                <div [ngClass]="{Captcha: true}">
+                    <div [ngClass]="{Message_captcha: true}">
+                        {{getMessage()}}
+                    </div>
+                    <input [ngClass]="{Input_c: true}" (change)="valueInput($event)" />
+                    <div [ngClass]="{CaptchaN: true}">
+                        {{createCaptcha()}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div [ngClass]="{Wrapper2:true}">
+            <button [ngClass]="{btn: true}" type="submit"
+                [attr.disabled]="output(checkForm(), name.invalid, email.invalid, telephone.invalid, message.invalid, getField())"
+                (click)="createUser(user);removeElement();getUser();" [(ngModel)]="user.id">
+                Отправить письмо!
+            </button>
+        </div>
+    </div>
+
+    <div [ngClass]="{Wrapper3:true}" id="container">
+        {{createElement()}}
+    </div>
+</form>

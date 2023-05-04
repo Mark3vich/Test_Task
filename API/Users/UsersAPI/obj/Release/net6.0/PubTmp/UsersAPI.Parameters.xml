@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="alexandr2-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\79202\\Documents\\Test\\API\\Users\\UsersAPI\\obj\\Release\\net6\.0\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="UsersAPI.Data.DataContext" description="" value="Data Source=SQL8005.site4now.net;Initial Catalog=db_a98ac1_database1;User Id=db_a98ac1_database1_admin;Password=sede3433343" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Users\\79202\\Documents\\Test\\API\\Users\\UsersAPI\\obj\\Release\\net6\.0\\PubTmp\\EFSQLScripts\\UsersAPI\.Data\.DataContext\.sql$" />
+  </parameter>
+</parameters>
